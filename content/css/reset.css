@@ -1,0 +1,80 @@
+/* https://css-tricks.com/an-interview-with-elad-shechter-on-the-new-css-reset/ */
+/* Remove all styles except for 'display' property for specific elements, providing a clean slate to apply custom styles while preserving the essential display properties of various elements */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Apply a more intuitive box-sizing model, ensuring padding and borders do not affect the set width and height of elements, facilitating more predictable layout styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove list styles to prevent the default list markers from appearing, providing a clean slate for custom list styling */
+ol,
+ul {
+  list-style: none;
+}
+
+/* Prevent media elements from overflowing their containers and ensure they take up the full width of their container for a responsive design */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Ensure tables have a clean layout by collapsing borders and removing spacing between cells, facilitating more controlled table styling */
+table {
+  border-collapse: collapse;
+}
+
+/* Revert the 'white-space' property for textarea elements on Safari to maintain the default behavior of preserving line breaks and white space in user input */
+textarea {
+  white-space: revert;
+}
+
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+/* Remove default margin and padding to prevent unexpected spacing issues and provide a clean slate for designing layouts */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a comfortable line-height and improve text rendering for better readability and a more polished visual appearance */
+body {
+  /* -webkit-font-smoothing: antialiased; */
+}
+
+/* Ensure form elements inherit font styles from their parent elements for consistent typography across the website */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Prevent text overflow by allowing words to break and wrap to the next line, maintaining a clean and organized text layout */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+dl,
+dt,
+blockquote {
+  overflow-wrap: break-word;
+}
+
+/* Create a new stacking context for elements typically used as root elements in JavaScript frameworks, helping to manage z-index and prevent stacking issues in complex layouts */
+#root,
+#__next {
+  isolation: isolate;
+}
